@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="hi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Manish Kumar Rakesh Kumar Jewellers – Catalog</title>
+<meta name="description" content="Sone ke gehnon ke naye designs ek hi jagah. Design pasand karein aur seedhe WhatsApp par bhaav poochhein.">
+<style id="css">:root{
+  --bg:#F4F4EF; --surface:#FFFFFF; --ink:#15302D; --muted:#5E6E6A; --line:#DCE0D8;
+  --green:#0E4A43; --green-2:#0A3832; --gold:#9A6F1C; --gold-soft:#F0E4C3; --ivory:#F7F2E4;
+  --gold-metal:#C99A2E; --silver-metal:#8C97A3; --danger:#B3261E; --ok:#1C7A4B; --shadow:0 6px 24px rgba(14,48,44,.10);
+  --display:'Marcellus','Times New Roman',serif;
+  --body:'Hind','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1918; --surface:#142524; --ink:#EAF0EC; --muted:#9DB0AB; --line:#243836;
+    --green:#0B3A34; --green-2:#082B27; --gold:#D9AE55; --gold-soft:#3F3316; --gold-metal:#E0B650; --silver-metal:#B4BEC9; --danger:#F2B8B5; --ok:#6FD39E; --shadow:0 6px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1918; --surface:#142524; --ink:#EAF0EC; --muted:#9DB0AB; --line:#243836;
+  --green:#0B3A34; --green-2:#082B27; --gold:#D9AE55; --gold-soft:#3F3316; --gold-metal:#E0B650; --silver-metal:#B4BEC9; --danger:#F2B8B5; --ok:#6FD39E; --shadow:0 6px 24px rgba(0,0,0,.35);
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+img{max-width:100%}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold-metal);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:400}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;border:1.5px solid var(--gold-metal);background:transparent;color:var(--ivory);font:600 16px var(--body);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.solid{background:var(--gold-metal);color:#1B2A22;border-color:var(--gold-metal)}
+.btn.dark{background:var(--green);color:var(--ivory);border-color:var(--green)}
+.btn.wa{background:#1F9D55;border-color:#1F9D55;color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.warn{color:var(--danger);border-color:var(--danger);background:transparent}
+.btn.sm{min-height:38px;padding:0 14px;font-size:14px}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}html{scroll-behavior:auto}}
+
+/* Top header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--green-2);color:var(--ivory);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;gap:12px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;margin-right:auto}
+.brand b{font-family:var(--display);font-weight:400;font-size:17px;line-height:1.15;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.logo,.mono{flex:0 0 auto;width:40px;height:40px;border-radius:50%}
+.logo{object-fit:cover;background:#fff;border:1.5px solid var(--gold-metal)}
+.mono{display:grid;place-items:center;border:1.5px solid var(--gold-metal);color:var(--gold-metal);font-family:var(--display);font-size:16px;letter-spacing:.04em}
+.nav{display:none;gap:22px;font-size:15px}
+.nav a{text-decoration:none;color:#DCE6DF}.nav a:hover{color:var(--gold-metal)}
+@media (min-width:760px){.nav{display:flex}}
+
+/* Hero */
+.hero{background:var(--green);color:var(--ivory);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% -10%,rgba(201,154,46,.28),transparent 70%),radial-gradient(400px 260px at -5% 110%,rgba(201,154,46,.14),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:32px;padding-top:44px;padding-bottom:44px}
+@media (min-width:860px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center;padding-top:72px;padding-bottom:72px}}
+.eyebrow{display:inline-block;color:var(--gold-metal);letter-spacing:.16em;text-transform:uppercase;font-size:13px;font-weight:600;margin:0 0 14px}
+.hero h1{font-size:clamp(32px,7vw,56px);line-height:1.08;margin:0 0 10px}
+.hero .hi{font-size:clamp(17px,3.6vw,24px);color:var(--gold-metal);margin:0 0 16px;font-weight:500}
+.hero .lead{max-width:46ch;margin:0 0 26px;color:#DCE6DF;font-size:17px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.stats div{min-width:84px}
+.stats b{display:block;font-family:var(--display);font-weight:400;font-size:30px;line-height:1;color:var(--gold-metal)}
+.stats span{font-size:13px;color:#C5D4CC}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:440px;width:100%;justify-self:center}
+.collage .ph{border-radius:16px;overflow:hidden;border:1.5px solid rgba(201,154,46,.6);background:rgba(255,255,255,.06);aspect-ratio:4/5}
+.collage.c1{grid-template-columns:1fr;max-width:320px}
+.collage.c3 .ph:first-child{grid-row:span 2;aspect-ratio:auto}
+.collage img{width:100%;height:100%;object-fit:cover;display:block}
+.orn{justify-self:center;width:min(280px,70%);opacity:.95}
+.orn svg{width:100%;height:auto;display:block}
+.orn .s{stroke:var(--gold-metal);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* Sections */
+section.blk{padding:44px 0 8px}
+.head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:16px}
+.head h2{margin:0;font-size:clamp(24px,4.5vw,32px)}
+.head p{margin:0;color:var(--muted);font-size:15px}
+.tiles{display:flex;gap:12px;overflow-x:auto;padding:2px 20px 10px;margin:0 -20px;scrollbar-width:none;scroll-snap-type:x proximity}
+.tiles::-webkit-scrollbar{display:none}
+.tile{flex:0 0 132px;scroll-snap-align:start;border:1px solid var(--line);background:var(--surface);border-radius:16px;overflow:hidden;padding:0;cursor:pointer;color:inherit;font:inherit;text-align:center}
+.tile .t-art{height:110px;display:grid;place-items:center;background:linear-gradient(160deg,var(--gold-soft),transparent 75%),var(--surface);overflow:hidden}
+.tile .t-art svg{width:56%;height:56%}
+.tile .t-art img{width:100%;height:100%;object-fit:cover}
+.tile span{display:block;padding:8px 6px 2px;font-weight:600;font-size:15px}
+.tile em{display:block;padding:0 6px 10px;font-style:normal;color:var(--muted);font-size:13px}
+
+/* Filters */
+.bar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px);z-index:10;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);margin-top:10px}
+.search,.inp{width:100%;min-height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:400 16px var(--body)}
+textarea.inp{padding:10px 14px;min-height:88px;resize:vertical}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 20px 2px;margin:0 -20px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;min-height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 15px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--green);color:var(--ivory);border-color:var(--green)}
+.opts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:14px 0 4px}
+.opts select{min-height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:0 10px;font:500 15px var(--body)}
+.chk{display:flex;gap:8px;align-items:center;font-size:15px}
+.chk input{width:18px;height:18px;accent-color:var(--green)}
+.count{margin:0 0 0 auto;color:var(--muted);font-size:15px}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:10px 0 48px}
+@media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media (min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;padding:0;color:inherit;font:inherit;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+.art{position:relative;aspect-ratio:4/5;display:grid;place-items:center;background:linear-gradient(160deg,var(--gold-soft),transparent 75%),var(--surface);overflow:hidden}
+.art svg{width:60%;height:60%}
+.art img{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;right:8px;top:8px;background:var(--green);color:var(--ivory);font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;border:1px solid var(--gold-metal)}
+.tag{position:absolute;left:0;right:0;bottom:0;background:rgba(10,22,20,.78);color:#fff;font-size:13px;font-weight:500;padding:5px 10px;text-align:center}
+.card .info{padding:12px 14px 14px;border-top:1px solid var(--line)}
+.card h3{font-size:18px;line-height:1.25;margin:0 0 3px}
+.card .meta{margin:0;color:var(--muted);font-size:14px}
+.empty{grid-column:1/-1;padding:48px 0;text-align:center;color:var(--muted)}
+
+.gold{--metal:var(--gold-metal)} .silver{--metal:var(--silver-metal)}
+svg .s{stroke:var(--metal);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+svg .f{fill:var(--metal);stroke:none}
+svg .g{stroke:#2A2320;fill:none;stroke-width:5;stroke-linecap:round}
+
+/* About & contact */
+.about{display:grid;gap:10px;padding-bottom:44px}
+.about p{margin:0;max-width:62ch;color:var(--muted);font-size:17px}
+footer{background:var(--green-2);color:var(--ivory);padding:40px 0 34px}
+footer .cols{display:grid;gap:26px}
+@media (min-width:760px){footer .cols{grid-template-columns:1.2fr 1fr}}
+footer h2{font-size:26px;margin:0 0 10px}
+footer p{margin:0 0 6px;color:#DCE6DF}
+footer .small{font-size:13px;color:#9FB3AB;margin-top:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);padding-top:16px}
+footer .small a{color:#9FB3AB}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:#1F9D55;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.fab svg{width:30px;height:30px;fill:#fff}
+
+/* Modal */
+dialog{border:none;padding:0;border-radius:20px;max-width:480px;width:calc(100% - 28px);max-height:calc(100% - 28px);background:var(--surface);color:var(--ink);box-shadow:0 24px 70px rgba(0,0,0,.4)}
+dialog::backdrop{background:rgba(8,20,18,.65)}
+dialog[open]{animation:pop .18s ease-out}
+@keyframes pop{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){dialog[open]{animation:none}}
+.m-art{position:relative;aspect-ratio:1/1;max-height:52vh;width:100%;display:grid;place-items:center;background:linear-gradient(160deg,var(--gold-soft),transparent 75%),var(--surface);overflow:hidden}
+.m-art svg{height:62%}
+.m-art img{width:100%;height:100%;object-fit:contain;background:var(--surface)}
+.m-body{padding:18px 20px 22px}
+.m-body h2{font-size:26px;margin:0 0 4px}
+.m-cat{margin:0 0 14px;color:var(--muted);font-size:15px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;margin:0 0 14px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+dt{color:var(--muted)} dd{margin:0;font-weight:500}
+.m-desc{margin:0 0 14px}
+.m-note{margin:0 0 16px;color:var(--muted);font-size:14px}
+.m-actions{display:flex;gap:10px;flex-wrap:wrap}
+.m-actions .btn{flex:1 1 150px}
+.close{position:absolute;top:10px;right:10px;z-index:2;width:42px;height:42px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:#15302D;font-size:24px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+
+/* Admin */
+.abar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--green-2);color:var(--ivory);padding:10px 0}
+.arow{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.arow strong{font-family:var(--display);font-weight:400;font-size:20px;margin-right:auto}
+.arow .btn{border-color:var(--gold-metal)}
+.st{flex-basis:100%;font-size:14px;color:#DCE6DF;min-height:20px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 0}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.kpi b{display:block;font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1}
+.kpi span{color:var(--muted);font-size:13px}
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+.sec h2{font-size:22px;margin:0 0 4px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.form{display:grid;gap:12px}
+@media (min-width:640px){.form.two{grid-template-columns:1fr 1fr}}
+.fld{display:grid;gap:4px;font-size:14px;color:var(--muted)}
+.fld .inp{color:var(--ink)}
+.sub{margin:0;color:var(--muted);font-size:14px}
+.item{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.item .th{width:64px;height:64px;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:var(--gold-soft)}
+.item .th svg{width:66%;height:66%} .item .th img{width:100%;height:100%;object-fit:cover}
+.item h3{margin:0;font-family:var(--body);font-size:16px;font-weight:600}
+.item .sub{margin:0}
+.item .acts{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+.nophoto{color:var(--danger)}
+.photo-prev{width:100%;aspect-ratio:16/10;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;overflow:hidden;color:var(--muted);font-size:14px}
+.photo-prev img{width:100%;height:100%;object-fit:contain}
+.logo-prev{width:72px;height:72px}
+.msg{margin:10px 0 0;font-size:14px;color:var(--ok)}
+.pnote{color:var(--muted);font-size:14px;padding-bottom:40px}
+.crow{display:flex;gap:8px;margin-bottom:8px}.crow .inp{flex:1}
+
+/* ===== 3D layer ===== */
+body{background:radial-gradient(900px 500px at 8% -4%,rgba(201,154,46,.12),transparent 60%),var(--bg)}
+.top{background:linear-gradient(180deg,#0D453F,#082B27);box-shadow:0 8px 22px rgba(0,0,0,.28);border-bottom:1px solid rgba(201,154,46,.5)}
+.btn{--edge:rgba(0,0,0,.28);box-shadow:0 3px 0 var(--edge),0 8px 14px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.28);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--edge),0 12px 18px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.28)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--edge),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn.solid{--edge:#7A5610;background:linear-gradient(180deg,#F2D078,#C99A2E 58%,#AB7E20);border-color:#8E6716;color:#2A1D05;text-shadow:0 1px 0 rgba(255,255,255,.4);box-shadow:0 4px 0 var(--edge),0 10px 16px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.65)}
+.btn.solid:hover{box-shadow:0 6px 0 var(--edge),0 14px 20px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.65)}
+.btn.solid:active{box-shadow:0 1px 0 var(--edge),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn.dark{--edge:#062521;background:linear-gradient(180deg,#16665D,#0E4A43);border-color:#0A3832}
+.btn.wa{--edge:#0F5A2E;background:linear-gradient(180deg,#2FC673,#1F9D55);border-color:#15773F}
+.btn.ghost,.btn.warn{--edge:var(--line);box-shadow:0 2px 0 var(--edge)}
+.btn.sm{box-shadow:0 2px 0 var(--edge),0 5px 9px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.ghost:hover,.btn.warn:hover{box-shadow:0 3px 0 var(--edge)}
+.btn:disabled{box-shadow:none;transform:none}
+.stats div{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(201,154,46,.35);border-radius:14px;padding:10px 14px;box-shadow:0 12px 22px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.22)}
+.tile{box-shadow:0 2px 0 var(--line),0 10px 18px rgba(14,48,44,.08);transition:transform .2s,box-shadow .2s}
+.tile:hover{transform:translateY(-5px);box-shadow:0 2px 0 var(--line),0 18px 28px rgba(14,48,44,.18)}
+.chip{box-shadow:0 2px 0 var(--line)}
+.chip[aria-pressed="true"]{box-shadow:0 2px 0 #062521,inset 0 1px 0 rgba(255,255,255,.2)}
+.grid{perspective:1400px}
+.card{position:relative;border-bottom:4px solid var(--gold-soft);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out,box-shadow .2s;box-shadow:0 1px 0 var(--line),0 14px 24px -10px rgba(14,48,44,.3),0 2px 5px rgba(14,48,44,.08);will-change:transform}
+.card:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px) scale(1.02);box-shadow:0 1px 0 var(--line),0 26px 36px -12px rgba(14,48,44,.4),0 4px 8px rgba(14,48,44,.1)}
+.card:active{transform:perspective(900px) scale(.98)}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,25%),rgba(255,255,255,.3),transparent 55%);opacity:0;transition:opacity .2s;pointer-events:none}
+.card:hover::after{opacity:1}
+.art::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.22),transparent 42%);pointer-events:none;z-index:1}
+.art::after,.m-art::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(201,154,46,.35),inset 0 -50px 40px -40px rgba(0,0,0,.22);pointer-events:none}
+.badge,.tag{z-index:2}
+.sec,.kpi{box-shadow:0 2px 0 var(--line),0 12px 22px rgba(14,48,44,.06)}
+dialog{perspective:900px}
+dialog[open]{animation:pop3d .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop3d{from{opacity:0;transform:perspective(900px) rotateX(-14deg) translateY(26px) scale(.95)}to{opacity:1;transform:none}}
+.collage{transform:perspective(1100px) rotateY(-12deg) rotateX(5deg);transform-style:preserve-3d;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:perspective(1100px) rotateY(-8deg) rotateX(3deg) translateY(-10px)}}
+.collage .ph{box-shadow:0 24px 38px rgba(0,0,0,.42),0 0 0 1px rgba(255,255,255,.08)}
+.collage .ph:nth-child(2){transform:translateZ(30px)}
+.collage .ph:nth-child(3){transform:translateZ(60px)}
+@media (prefers-reduced-motion:reduce){.collage{animation:none}.card,.tile,.btn{transition:none}.card:hover,.tile:hover{transform:none}dialog[open]{animation:none}}
+</style>
+</head><body>
+<div id="app"></div>
+<script id="data" type="application/json">{"shop":{"name":"Manish Kumar Rakesh Kumar Jewellers","hi":"मनीष कुमार राकेश कुमार ज्वैलर्स","whatsapp":"917388713077","phone":"+917388713077","address":"Dukaan ka pata yahan likhein","hours":"Roz subah 10 baje se raat 8 baje tak","tagline":"Sone ke gehnon ke naye designs ek hi jagah. Design pasand karein aur seedhe WhatsApp par bhaav poochhein.","about":"Yeh hamara online catalog hai jahan aap hamare gehnon ke designs, purity aur weight dekh sakte hain. Kisi bhi design ka bhaav ya availability jaanne ke liye WhatsApp ya call karein, ya seedhe dukaan par aayein.","logo":""},"products":[{"id":"p1790800143454","n":"Free","code":"Free","c":"J Tops","m":"gold","p":"22K","gw":"15","nw":"2","size":"","stock":1,"d":"Dffcf","img":""},{"id":"p1790800113456","n":"De","code":"De","c":"Bali","m":"gold","p":"22K","gw":"22","nw":"54","size":"","stock":0,"d":"","img":""},{"id":"p1790799344676","n":"H2","code":"H2","c":"Chokar","m":"gold","p":"22K","gw":"12","nw":"12","size":"","stock":1,"d":"","img":""},{"id":"p1790799300977","n":"H1","code":"H1","c":"Top","m":"gold","p":"22K","gw":"2","nw":"1","size":"12","stock":1,"d":"","img":""}],"cats":["Top","Chokar","Haar","Fancy Jhumka","Madarsi Jhumka","Brij Bali","Set Jhala","Suee Dhaaga","Latkan Tops","Bali","J Tops","G Ring","Ladies Ring","Tika","Nathiya","SK Locket","Chudi","DK Locket","Other"],"admin":{"salt":"mkrk7c1e","h":"25e91e126d13c92efef09b04aea72daf2aae9302a481c2018a2dff73205ad18c"}}</script>
+<script id="app-js">(function(){
+var HEAD='<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">';
+var $=function(s){return document.querySelector(s)};
+var app=$('#app');
+var S=JSON.parse($('#data').textContent);
+var view=location.hash==='#admin'?'admin':'catalog';
+var dirty=false, canAdmin=false, ready=false, art=null, unlocked=false;
+try{unlocked=sessionStorage.getItem('mkrk_u')==='1'}catch(e){}
+var F={cat:'Sab',q:'',pur:'',stock:false};
+var aq='';
+var CATS=['Top','Chokar','Haar','Fancy Jhumka','Madarsi Jhumka','Brij Bali','Set Jhala','Suee Dhaaga','Latkan Tops','Bali','J Tops','G Ring','Ladies Ring','Tika','Nathiya','SK Locket','Chudi','DK Locket','Other'];
+var ICON={'Top':'Earrings','Chokar':'Necklace','Haar':'Necklace','Fancy Jhumka':'Earrings','Madarsi Jhumka':'Earrings','Brij Bali':'Earrings','Set Jhala':'Necklace','Suee Dhaaga':'Chains','Latkan Tops':'Earrings','Bali':'Earrings','J Tops':'Earrings','G Ring':'Rings','Ladies Ring':'Rings','Tika':'Gem','Nathiya':'Gem','SK Locket':'Necklace','Chudi':'Bangles','DK Locket':'Necklace','Other':'Gem'};
+var PURITY=['24K','22K','18K','14K','925','Platinum'];
+if(!S.cats)S.cats=CATS.slice();
+if(!S.admin)S.admin={salt:'mkrk7c1e',h:'25e91e126d13c92efef09b04aea72daf2aae9302a481c2018a2dff73205ad18c'};
+var ART={
+ Rings:'<circle class="s" cx="50" cy="64" r="22"/><path class="f" d="M41 38 50 26 59 38 50 47Z"/>',
+ Necklace:'<path class="s" d="M16 22Q50 92 84 22"/><path class="f" d="M50 60c-8 8-8 14 0 14s8-6 0-14Z"/><circle class="f" cx="50" cy="52" r="3"/>',
+ Earrings:'<circle class="f" cx="32" cy="20" r="3"/><path class="s" d="M32 23v14"/><circle class="s" cx="32" cy="52" r="14"/><circle class="f" cx="32" cy="52" r="4"/><circle class="f" cx="68" cy="20" r="3"/><path class="s" d="M68 23v14"/><circle class="s" cx="68" cy="52" r="14"/><circle class="f" cx="68" cy="52" r="4"/>',
+ Bangles:'<circle class="s" cx="50" cy="50" r="34"/><circle class="s" cx="50" cy="50" r="24"/><circle class="s" cx="50" cy="50" r="29" stroke-dasharray="1 6" stroke-width="6"/>',
+ Chains:'<path class="s" d="M14 26Q50 96 86 26" stroke-dasharray="8 4" stroke-width="5"/>',
+ Gem:'<path class="s" d="M18 44 32 26H68L82 44 50 84Z"/><path class="s" d="M18 44H82M42 26 50 44 58 26M50 44V84"/>'
+};
+var WA_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.100-.1-.2-1.100-1.500-1.100-2.800 0-1.300.7-2 1-2.300.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.100.1.300 0 .5l-.3.500-.4.500c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l2 1c.3.100.5.200.5.300.1.100.1.600-.1 1.100z"/></svg>';
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function icon(p){return '<svg class="'+p.m+'" viewBox="0 0 100 100" role="img" aria-label="'+esc(p.c)+'">'+(ART[ICON[p.c]||'Gem']||ART.Gem)+'</svg>'}
+function media(p,lazy){return p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.n)+'"'+(lazy?' loading="lazy" decoding="async"':'')+'>':icon(p)}
+function metalName(m){return m==='gold'?'Gold':'Silver'}
+function isOut(p){return Number(p.stock)<=0}
+function wt(p){return p.gw?'G.W. '+p.gw+' g':''}
+function wa(t){return 'https://wa.me/'+encodeURIComponent(S.shop.whatsapp)+'?text='+encodeURIComponent(t)}
+function mono(){var w=S.shop.name.trim().split(/\s+/);return esc(((w[0]||'M')[0]+((w[1]||'')[0]||'')).toUpperCase())}
+function logo(){return S.shop.logo?'<img class="logo" src="'+esc(S.shop.logo)+'" alt="">':'<span class="mono" aria-hidden="true">'+mono()+'</span>'}
+function present(){return S.cats.filter(function(c){return S.products.some(function(p){return p.c===c})})}
+function norm(s){return String(s||'').toLowerCase().replace(/\.[^.]+$/,'').replace(/[^a-z0-9]/g,'')}
+
+
+var FINE=!!(window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches);
+function tilt(el){
+ if(!FINE)return;
+ el.addEventListener('pointermove',function(e){
+  var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+  el.style.setProperty('--ry',((x-.5)*12).toFixed(2)+'deg');el.style.setProperty('--rx',((.5-y)*12).toFixed(2)+'deg');
+  el.style.setProperty('--mx',(x*100).toFixed(1)+'%');el.style.setProperty('--my',(y*100).toFixed(1)+'%');
+ });
+ el.addEventListener('pointerleave',function(){el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg')});
+}
+/* ---------- Catalog ---------- */
+function catalog(){
+ var sh=S.shop, cats=present();
+ document.title=sh.name+' – Catalog';
+ var inStock=S.products.filter(function(p){return !isOut(p)}).length;
+ var withImg=S.products.filter(function(p){return p.img}).slice(0,3);
+ var purs=[];S.products.forEach(function(p){if(p.p&&purs.indexOf(p.p)<0)purs.push(p.p)});
+ var side=withImg.length
+  ?'<div class="collage c'+withImg.length+'">'+withImg.map(function(p){return '<div class="ph"><img src="'+esc(p.img)+'" alt="'+esc(p.n)+'"></div>'}).join('')+'</div>'
+  :'<div class="orn"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="s" cx="50" cy="50" r="46"/><circle class="s" cx="50" cy="50" r="38" stroke-dasharray="1 5"/><path class="s" d="M50 22 66 38 50 78 34 38Z"/><path class="s" d="M34 38H66M42 30l8 8 8-8M50 38v40"/></svg></div>';
+ app.innerHTML=
+ '<header class="top"><div class="wrap"><a class="brand" href="#top">'+logo()+'<b>'+esc(sh.name)+'</b></a>'+
+  '<nav class="nav" aria-label="Menu"><a href="#catalog">Catalog</a><a href="#about">Hamare baare mein</a><a href="#contact">Sampark</a></nav>'+
+  '<a class="btn wa sm" target="_blank" rel="noopener" href="'+esc(wa('Namaste, mujhe '+sh.name+' ka catalog dekhna hai.'))+'">WhatsApp</a></div></header>'+
+ '<section class="hero" id="top"><div class="wrap"><div>'+
+  '<span class="eyebrow">Jewellery Catalog</span>'+
+  '<h1>'+esc(sh.name)+'</h1>'+(sh.hi?'<p class="hi">'+esc(sh.hi)+'</p>':'')+
+  '<p class="lead">'+esc(sh.tagline)+'</p>'+
+  '<div class="btns"><a class="btn solid" href="#catalog">Catalog dekhein</a><a class="btn" target="_blank" rel="noopener" href="'+esc(wa('Namaste, mujhe jaankari chahiye.'))+'">WhatsApp par poochhein</a></div>'+
+  '<div class="stats"><div><b>'+S.products.length+'</b><span>Designs</span></div><div><b>'+inStock+'</b><span>Available</span></div><div><b>'+cats.length+'</b><span>Categories</span></div></div>'+
+ '</div>'+side+'</div></section>'+
+ (cats.length>1?'<section class="blk"><div class="wrap"><div class="head"><h2>Categories</h2></div><div class="tiles" id="tiles"></div></div></section>':'')+
+ '<section class="blk" id="catalog"><div class="wrap"><div class="head"><h2>Hamara Collection</h2><p id="count" aria-live="polite"></p></div></div>'+
+  '<div class="bar"><div class="wrap"><input class="search" id="q" type="search" placeholder="Design, code ya category dhundhein" aria-label="Search" value="'+esc(F.q)+'"><div class="chips" id="chips" role="group" aria-label="Category"></div></div></div>'+
+  '<div class="wrap"><div class="opts"><label class="chk"><input type="checkbox" id="fs"'+(F.stock?' checked':'')+'> Sirf available</label>'+
+  (purs.length>1?'<label class="chk">Purity <select id="fp" aria-label="Purity"><option value="">Sab</option>'+purs.map(function(x){return '<option'+(F.pur===x?' selected':'')+'>'+esc(x)+'</option>'}).join('')+'</select></label>':'')+
+  '</div><div class="grid" id="grid"></div></div></section>'+
+ '<section class="blk" id="about"><div class="wrap about"><div class="head"><h2>Hamare baare mein</h2></div><p>'+esc(sh.about)+'</p></div></section>'+
+ '<footer id="contact"><div class="wrap"><div class="cols"><div><h2>Dukaan par aayein</h2><p>'+esc(sh.address)+'</p><p>'+esc(sh.hours)+'</p>'+
+  '<p style="margin-top:12px">Sone-chandi ka bhaav roz ke rate aur making charge ke hisaab se badalta hai. Sahi bhaav ke liye call ya WhatsApp karein.</p></div>'+
+  '<div><h2>Sampark karein</h2><p>'+esc(sh.phone)+'</p><div class="btns" style="margin-top:12px"><a class="btn solid" href="tel:'+esc(sh.phone)+'">Call karein</a><a class="btn wa" target="_blank" rel="noopener" href="'+esc(wa('Namaste, mujhe jaankari chahiye.'))+'">WhatsApp</a></div></div></div>'+
+  '<div class="small"><span>© '+new Date().getFullYear()+' '+esc(sh.name)+'</span><a href="#admin" id="adminlink">Owner login</a></div></div></footer>'+
+ '<a class="fab" target="_blank" rel="noopener" aria-label="WhatsApp par chat karein" href="'+esc(wa('Namaste, mujhe jaankari chahiye.'))+'">'+WA_ICON+'</a>'+
+ '<dialog id="dlg" aria-labelledby="m-title"><button class="close" id="close" aria-label="Band karein">×</button>'+
+  '<div class="m-art" id="m-art"></div><div class="m-body"><h2 id="m-title"></h2><p class="m-cat" id="m-cat"></p><dl id="m-dl"></dl><p class="m-desc" id="m-desc"></p>'+
+  '<p class="m-note">Bhaav aaj ke rate aur making charge ke hisaab se hoga.</p>'+
+  '<div class="m-actions"><a class="btn wa" id="m-wa" target="_blank" rel="noopener" href="#">WhatsApp par poochhein</a>'+
+  '<a class="btn dark" href="tel:'+esc(sh.phone)+'">Call karein</a></div></div></dialog>';
+
+ if(F.cat!=='Sab'&&cats.indexOf(F.cat)<0)F.cat='Sab';
+ var tiles=$('#tiles');
+ if(tiles)cats.forEach(function(c){
+  var n=S.products.filter(function(p){return p.c===c}),ph=n.filter(function(p){return p.img})[0];
+  var b=document.createElement('button');b.type='button';b.className='tile';
+  b.innerHTML='<div class="t-art">'+(ph?'<img src="'+esc(ph.img)+'" alt="">':icon({m:'gold',c:c}))+'</div><span>'+esc(c)+'</span><em>'+n.length+' design'+(n.length>1?'s':'')+'</em>';
+  b.onclick=function(){F.cat=c;chips();grid();$('#catalog').scrollIntoView()};
+  tiles.appendChild(b);
+ });
+ chips();
+ $('#q').oninput=function(e){F.q=e.target.value;grid()};
+ $('#fs').onchange=function(e){F.stock=e.target.checked;grid()};
+ if($('#fp'))$('#fp').onchange=function(e){F.pur=e.target.value;grid()};
+ $('#close').onclick=function(){$('#dlg').close()};
+ $('#dlg').addEventListener('click',function(e){if(e.target===$('#dlg'))$('#dlg').close()});
+ $('#adminlink').onclick=function(e){e.preventDefault();go('admin')};
+ grid();
+}
+function chips(){
+ var box=$('#chips');box.innerHTML='';
+ ['Sab'].concat(present()).forEach(function(c){
+  var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=c;
+  b.setAttribute('aria-pressed',c===F.cat);
+  b.onclick=function(){F.cat=c;chips();grid()};
+  box.appendChild(b);
+ });
+}
+function grid(){
+ var t=F.q.trim().toLowerCase();
+ var list=S.products.filter(function(p){
+  return (F.cat==='Sab'||p.c===F.cat)&&(!F.stock||!isOut(p))&&(!F.pur||p.p===F.pur)&&(!t||(p.n+' '+(p.code||'')+' '+p.c+' '+metalName(p.m)+' '+p.p).toLowerCase().indexOf(t)>-1);
+ });
+ $('#count').textContent=list.length+(list.length===1?' design':' designs');
+ var g=$('#grid');g.innerHTML='';
+ if(!list.length){g.innerHTML='<p class="empty">Koi design nahi mila. Filter badal kar dekhein.</p>';return}
+ list.forEach(function(p){
+  var b=document.createElement('button');b.className='card';b.type='button';
+  b.innerHTML='<div class="art">'+media(p,true)+(p.p?'<span class="badge">'+esc(p.p)+'</span>':'')+(isOut(p)?'<span class="tag">Abhi available nahi</span>':'')+'</div><div class="info"><h3>'+esc(p.n)+'</h3><p class="meta">'+esc(p.c)+(p.gw?' · '+esc(wt(p)):'')+'</p></div>';
+  b.onclick=function(){openItem(p)};
+  tilt(b);
+  g.appendChild(b);
+ });
+}
+function openItem(p){
+ $('#m-art').innerHTML=media(p);
+ $('#m-title').textContent=p.n;
+ $('#m-cat').textContent=p.c+' · '+metalName(p.m);
+ $('#m-dl').innerHTML='<dt>Purity</dt><dd>'+esc(p.p||'-')+'</dd>'+(p.gw?'<dt>Gross weight</dt><dd>'+esc(p.gw)+' g</dd>':'')+(p.nw?'<dt>Net weight</dt><dd>'+esc(p.nw)+' g</dd>':'')+(p.size?'<dt>Size</dt><dd>'+esc(p.size)+'</dd>':'')+'<dt>Status</dt><dd>'+(isOut(p)?'Abhi available nahi':'Available')+'</dd>';
+ $('#m-desc').textContent=p.d||'';$('#m-desc').hidden=!p.d;
+ $('#m-wa').href=wa('Namaste, mujhe "'+p.n+'" ('+(p.p||'')+(p.gw?', '+p.gw+' g':'')+') ke baare mein jaankari chahiye.');
+ $('#dlg').showModal();
+}
+
+/* ---------- Admin ---------- */
+function status(t){var e=$('#st');if(e)e.textContent=t||''}
+function touch(){dirty=true;var b=$('#pub');if(b)b.disabled=false;status('Badlaav abhi publish nahi hue. "Save & Publish" dabayein.');kpis()}
+function kpis(){
+ var e=$('#kpis');if(!e)return;
+ var np=S.products.filter(function(p){return !p.img}).length;
+ var mb=(JSON.stringify(S).length/1048576).toFixed(1);
+ e.innerHTML='<div class="kpi"><b>'+S.products.length+'</b><span>Designs</span></div><div class="kpi"><b>'+np+'</b><span>Bina photo ke</span></div><div class="kpi"><b>'+mb+' MB</b><span>Site size (limit 16)</span></div>';
+}
+function go(v){
+ view=v;
+ try{history.replaceState(null,'',v==='admin'?'#admin':location.pathname+location.search)}catch(e){}
+ window.scrollTo(0,0);render();
+}
+
+function sha(pw,salt){
+ var b=new TextEncoder().encode(salt+':'+pw);
+ return crypto.subtle.digest('SHA-256',b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return ('0'+x.toString(16)).slice(-2)}).join('')});
+}
+function lock(){
+ document.title='Admin login';
+ app.innerHTML='<main class="wrap" style="padding:48px 20px;max-width:420px"><h1 style="margin:0 0 10px">Admin panel</h1><p>Password daalein.</p>'+
+  '<input class="inp" id="pw" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password" style="margin-bottom:8px">'+
+  '<p class="msg" id="pe" role="alert" style="color:var(--danger)"></p>'+
+  '<div class="btns"><button class="btn dark" id="go2" type="button">Kholein</button><button class="btn ghost" id="back" type="button">Catalog dekhein</button></div></main>';
+ function enter(){
+  var pe=$('#pe');pe.textContent='';
+  if(!window.crypto||!crypto.subtle){pe.textContent='Is browser mein password check nahi ho pa raha.';return}
+  sha($('#pw').value,S.admin.salt).then(function(x){
+   if(x===S.admin.h){unlocked=true;try{sessionStorage.setItem('mkrk_u','1')}catch(e){}admin()}
+   else pe.textContent='Password galat hai.';
+  });
+ }
+ $('#go2').onclick=enter;
+ $('#back').onclick=function(){go('catalog')};
+ $('#pw').onkeydown=function(e){if(e.key==='Enter')enter()};
+ $('#pw').focus();
+}
+function catsUI(){
+ var box=$('#catbox');box.innerHTML='';
+ S.cats.forEach(function(c,i){
+  var r=document.createElement('div');r.className='crow';
+  var locked=c==='Other';
+  r.innerHTML='<input class="inp" value="'+esc(c)+'" aria-label="Category naam"'+(locked?' readonly':'')+'>'+(locked?'':'<button class="btn sm warn" type="button">Hatayein</button>');
+  var inp=r.querySelector('input'),m=$('#catmsg');
+  inp.onchange=function(){
+   var v=inp.value.trim(),old=S.cats[i];
+   if(!v||S.cats.some(function(x,j){return j!==i&&x.toLowerCase()===v.toLowerCase()})){inp.value=old;m.textContent='Naam khali ya repeat nahi ho sakta.';return}
+   S.products.forEach(function(p){if(p.c===old)p.c=v});S.cats[i]=v;m.textContent='';touch();list();
+  };
+  var b=r.querySelector('button');
+  if(b)b.onclick=function(){
+   if(S.products.some(function(p){return p.c===c})){m.textContent='"'+c+'" mein designs hain. Pehle unhe doosri category mein daalein.';return}
+   S.cats.splice(i,1);m.textContent='';touch();catsUI();
+  };
+  box.appendChild(r);
+ });
+}
+function adminExtras(){
+ catsUI();
+ $('#addcat').onclick=function(){
+  var v=$('#newcat').value.trim(),m=$('#catmsg');
+  if(!v){m.textContent='Category ka naam likhein.';return}
+  if(S.cats.some(function(c){return c.toLowerCase()===v.toLowerCase()})){m.textContent='Yeh category pehle se hai.';return}
+  S.cats.splice(Math.max(0,S.cats.indexOf('Other')),0,v);$('#newcat').value='';m.textContent='';touch();catsUI();
+ };
+ $('#setpw').onclick=function(){
+  var a=$('#np').value,b=$('#np2').value,m=$('#pwmsg');
+  if(a.length<6){m.textContent='Password kam se kam 6 akshar ka rakhein.';return}
+  if(a!==b){m.textContent='Dono password alag hain.';return}
+  if(!window.crypto||!crypto.subtle){m.textContent='Is browser mein password set nahi ho pa raha.';return}
+  var salt=Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(6)),function(x){return ('0'+x.toString(16)).slice(-2)}).join('');
+  sha(a,salt).then(function(x){S.admin={salt:salt,h:x};$('#np').value='';$('#np2').value='';m.textContent='Naya password set ho gaya. Ab "Save & Publish" dabayein.';touch()});
+ };
+}
+function admin(){
+ document.title='Admin – '+S.shop.name;
+ if(!ready){app.innerHTML='<div class="wrap" style="padding-top:40px">Check ho raha hai...</div>';return}
+ if(!canAdmin){app.innerHTML='<main class="wrap" style="padding:48px 20px"><h1 style="margin:0 0 10px">Owner login</h1><p>Yeh page sirf dukaan ke owner ya editor ke liye hai. Jis claude.ai account se yeh site banayi gayi hai, usi se login karke is page ko kholein.</p><button class="btn dark" id="back" type="button">Catalog par wapas jayein</button></main>';$('#back').onclick=function(){go('catalog')};return}
+ if(!unlocked){lock();return}
+ var sh=S.shop;
+ var f=function(k,l,ph){return '<label class="fld">'+l+'<input class="inp" data-k="'+k+'" value="'+esc(sh[k])+'" placeholder="'+(ph||'')+'"></label>'};
+ var ta=function(k,l){return '<label class="fld">'+l+'<textarea class="inp" data-k="'+k+'">'+esc(sh[k])+'</textarea></label>'};
+ app.innerHTML=
+ '<div class="abar"><div class="wrap arow"><strong>Admin panel</strong>'+
+  '<button class="btn sm" id="view" type="button">Catalog dekhein</button>'+
+  '<button class="btn sm solid" id="pub" type="button" '+(dirty?'':'disabled')+'>Save &amp; Publish</button>'+
+  '<div class="st" id="st" role="status"></div></div></div>'+
+ '<main class="wrap"><div class="kpis" id="kpis"></div>'+
+  '<section class="sec"><div class="row"><div><h2 id="pc"></h2><p class="sub">Design par photo lagane ke liye uske thumbnail ke neeche "Photo" dabayein.</p></div><button class="btn sm dark" id="add" type="button">+ Naya design</button></div>'+
+   '<input class="inp" id="as" type="search" placeholder="Design dhundhein" aria-label="Design dhundhein" style="margin-bottom:6px"><div id="alist"></div></section>'+
+  '<section class="sec"><h2>Photos ek saath upload karein</h2><p class="sub">Photo ki file ka naam design ke code jaisa rakhein (jaise <b>HR 0.jpg</b>, <b>bon.png</b>). Naam match hone par photo apne aap sahi design par lag jaati hai.</p>'+
+   '<div class="btns" style="margin-top:12px"><label class="btn sm dark" style="cursor:pointer">Photos chunein<input id="bulk" type="file" accept="image/*" multiple hidden></label></div><p class="msg" id="bmsg" role="status"></p></section>'+
+  '<section class="sec"><h2>Google Sheet se import</h2><p class="sub">Sheet mein File → Download → CSV chunkar upload karein. Columns: S. No., G. W., N. W., Purity, Stock, Size. Pehle se maujood design ka stock aur weight update hota hai, photo wahi rehti hai.</p>'+
+   '<div class="btns" style="margin-top:12px"><label class="btn sm dark" style="cursor:pointer">CSV chunein<input id="csv" type="file" accept=".csv,text/csv" hidden></label></div><p class="msg" id="imsg" role="status"></p></section>'+
+  '<section class="sec"><h2>Dukaan ki details</h2><div class="form" style="margin-top:12px">'+
+   '<div class="row" style="justify-content:flex-start;gap:14px"><div class="th logo-prev" id="lp" style="border-radius:50%;overflow:hidden;display:grid;place-items:center"></div>'+
+   '<div class="btns"><label class="btn sm ghost" style="cursor:pointer">Logo chunein<input id="lg" type="file" accept="image/*" hidden></label><button class="btn sm ghost" id="lx" type="button">Logo hatayein</button></div></div>'+
+   '<div class="form two">'+f('name','Dukaan ka naam')+f('hi','Hindi naam')+f('whatsapp','WhatsApp number (country code ke saath, bina +)','919876543210')+f('phone','Call number','+919876543210')+f('address','Pata')+f('hours','Dukaan ka samay')+'</div>'+
+   ta('tagline','Hero par chhota sandesh')+ta('about','Hamare baare mein')+
+  '</div></section>'+
+ '<section class="sec"><h2>Categories</h2><p class="sub">Naam badalne par us category ke sabhi designs apne aap badal jaate hain.</p><div id="catbox" style="margin-top:10px"></div>'+
+   '<div class="crow"><input class="inp" id="newcat" placeholder="Nayi category, jaise: Pendant" aria-label="Nayi category"><button class="btn sm dark" id="addcat" type="button">Jodein</button></div><p class="msg" id="catmsg" role="alert"></p></section>'+
+  '<section class="sec"><h2>Password badlein</h2><div class="form two" style="margin-top:12px"><label class="fld">Naya password<input class="inp" id="np" type="password" autocomplete="new-password"></label><label class="fld">Dobara likhein<input class="inp" id="np2" type="password" autocomplete="new-password"></label></div>'+
+   '<div class="btns" style="margin-top:12px"><button class="btn sm dark" id="setpw" type="button">Password badlein</button></div><p class="msg" id="pwmsg" role="alert"></p></section>'+
+  '<p class="pnote">Publish karne par site naye version par reload hoti hai aur sabhi customers ko naya catalog dikhta hai. Photos apne aap chhoti ki jaati hain taaki site tez khule.</p>'+
+ '</main>'+
+ '<dialog id="pdlg" aria-labelledby="pt"><div class="m-body"><h2 id="pt"></h2><div class="form" id="pf" style="margin-top:12px"></div></div></dialog>';
+ [].forEach.call(document.querySelectorAll('[data-k]'),function(i){i.oninput=function(){S.shop[i.dataset.k]=i.value;touch()}});
+ $('#pub').onclick=publish;
+ $('#view').onclick=function(){go('catalog')};
+ $('#add').onclick=function(){editP(null)};
+ $('#as').oninput=function(e){aq=e.target.value;list()};$('#as').value=aq;
+ $('#csv').onchange=function(e){var fl=e.target.files&&e.target.files[0];if(!fl)return;var r=new FileReader();r.onload=function(){$('#imsg').textContent=importCSV(String(r.result).replace(/^\uFEFF/,''));e.target.value=''};r.readAsText(fl)};
+ $('#bulk').onchange=bulkPhotos;
+ var lp=function(){$('#lp').innerHTML=sh.logo?'<img src="'+esc(sh.logo)+'" alt="" style="width:100%;height:100%;object-fit:cover">':'<span class="mono">'+mono()+'</span>';$('#lx').hidden=!sh.logo;kpis()};
+ $('#lg').onchange=function(e){var fl=e.target.files&&e.target.files[0];if(!fl)return;shrink(fl,256,'image/png').then(function(u){sh.logo=u;touch();lp()}).catch(function(){status('Yeh logo nahi khul paya.')});e.target.value=''};
+ $('#lx').onclick=function(){sh.logo='';touch();lp()};
+ lp();list();kpis();adminExtras();
+}
+function list(){
+ $('#pc').textContent='Designs ('+S.products.length+')';
+ var t=aq.trim().toLowerCase();
+ var items=S.products.filter(function(p){return !t||(p.n+' '+(p.code||'')+' '+p.c).toLowerCase().indexOf(t)>-1});
+ var box=$('#alist');box.innerHTML='';
+ if(!S.products.length){box.innerHTML='<p class="sub">Abhi koi design nahi hai. "Naya design" dabakar ya CSV import karke shuru karein.</p>';return}
+ if(!items.length){box.innerHTML='<p class="sub">Koi design nahi mila.</p>';return}
+ items.forEach(function(p){
+  var d=document.createElement('div');d.className='item';
+  d.innerHTML='<div class="th">'+media(p,true)+'</div><div><h3>'+esc(p.n)+'</h3><p class="sub">'+esc(p.c)+' · '+esc(p.p)+' '+metalName(p.m)+(p.gw?' · '+esc(wt(p)):'')+' · Stock '+esc(p.stock)+'</p>'+(p.img?'':'<p class="sub nophoto">Photo nahi hai</p>')+'</div>'+
+   '<div class="acts"><label class="btn sm ghost" style="cursor:pointer">'+(p.img?'Photo badlein':'Photo lagayein')+'<input data-a="i" type="file" accept="image/*" hidden></label>'+
+   '<button class="btn sm ghost" data-a="e" type="button">Badlein</button><button class="btn sm warn" data-a="d" type="button">Hatayein</button></div>';
+  d.querySelector('[data-a=i]').onchange=function(e){
+   var fl=e.target.files&&e.target.files[0];if(!fl)return;
+   shrink(fl).then(function(u){p.img=u;touch();list()}).catch(function(){status('Yeh photo nahi khul payi.')});
+  };
+  d.querySelector('[data-a=e]').onclick=function(){editP(p)};
+  var del=d.querySelector('[data-a=d]'),armed=false;
+  del.onclick=function(){
+   if(!armed){armed=true;del.textContent='Pakka hatayein?';setTimeout(function(){armed=false;del.textContent='Hatayein'},3000);return}
+   S.products=S.products.filter(function(x){return x!==p});touch();list();
+  };
+  box.appendChild(d);
+ });
+}
+function shrink(file,max,type){
+ max=max||640;type=type||'image/jpeg';
+ return new Promise(function(res,rej){
+  var r=new FileReader();
+  r.onerror=rej;
+  r.onload=function(){
+   var im=new Image();
+   im.onerror=rej;
+   im.onload=function(){
+    var k=Math.min(1,max/Math.max(im.width,im.height));
+    var c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.width*k));c.height=Math.max(1,Math.round(im.height*k));
+    var x=c.getContext('2d');
+    if(type==='image/jpeg'){x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height)}
+    x.drawImage(im,0,0,c.width,c.height);
+    res(c.toDataURL(type,0.74));
+   };
+   im.src=r.result;
+  };
+  r.readAsDataURL(file);
+ });
+}
+function bulkPhotos(e){
+ var files=[].slice.call(e.target.files||[]);e.target.value='';
+ if(!files.length)return;
+ var out=$('#bmsg');out.textContent='Photos lag rahi hain...';
+ var ok=0,miss=[],bad=[];
+ var jobs=files.map(function(f){
+  var key=norm(f.name),p=S.products.filter(function(x){return norm(x.code||x.n)===key||norm(x.n)===key})[0];
+  if(!p){miss.push(f.name);return Promise.resolve()}
+  return shrink(f).then(function(u){p.img=u;ok++}).catch(function(){bad.push(f.name)});
+ });
+ Promise.all(jobs).then(function(){
+  if(ok)touch();list();
+  out.textContent=ok+' photo lag gayi.'+(miss.length?' In ka naam kisi design se match nahi hua: '+miss.join(', ')+'. Inhe design ke "Photo lagayein" button se lagayein.':'')+(bad.length?' Yeh khul nahi payi: '+bad.join(', ')+'.':'');
+ });
+}
+function editP(p){
+ var isNew=!p;
+ var w=isNew?{id:'p'+Date.now(),n:'',code:'',c:'Other',m:'gold',p:'22K',gw:'',nw:'',size:'',stock:1,d:'',img:''}:Object.assign({},p);
+ $('#pt').textContent=isNew?'Naya design':'Design badlein';
+ var opt=function(a,v){return a.map(function(x){return '<option'+(x===v?' selected':'')+'>'+x+'</option>'}).join('')};
+ $('#pf').innerHTML=
+  '<label class="fld">Design ka naam / code<input class="inp" id="f-n" value="'+esc(w.n)+'" placeholder="Jaise: HR 12"></label>'+
+  '<div class="form two"><label class="fld">Category<select class="inp" id="f-c">'+opt(S.cats,w.c)+'</select></label>'+
+  '<label class="fld">Metal<select class="inp" id="f-m"><option value="gold"'+(w.m==='gold'?' selected':'')+'>Gold (सोना)</option><option value="silver"'+(w.m==='silver'?' selected':'')+'>Silver (चाँदी)</option></select></label>'+
+  '<label class="fld">Purity<input class="inp" id="f-p" list="pl" value="'+esc(w.p)+'"><datalist id="pl">'+PURITY.map(function(x){return '<option value="'+x+'">'}).join('')+'</datalist></label>'+
+  '<label class="fld">Stock (kitne piece)<input class="inp" id="f-st" type="number" min="0" inputmode="numeric" value="'+esc(w.stock)+'"></label>'+
+  '<label class="fld">G.W. (gross, gram)<input class="inp" id="f-gw" inputmode="decimal" value="'+esc(w.gw)+'"></label>'+
+  '<label class="fld">N.W. (net, gram)<input class="inp" id="f-nw" inputmode="decimal" value="'+esc(w.nw)+'"></label>'+
+  '<label class="fld">Size<input class="inp" id="f-sz" value="'+esc(w.size)+'"></label></div>'+
+  '<label class="fld">Chhota vivaran (zaroori nahi)<textarea class="inp" id="f-d">'+esc(w.d)+'</textarea></label>'+
+  '<div class="fld">Photo<div class="photo-prev" id="pp"></div>'+
+   '<div class="btns" style="margin-top:8px"><label class="btn sm ghost" style="cursor:pointer">Photo chunein<input id="f-i" type="file" accept="image/*" hidden></label>'+
+   '<button class="btn sm ghost" id="f-x" type="button">Photo hatayein</button></div></div>'+
+  '<p class="sub" id="f-e" role="alert" style="color:var(--danger)"></p>'+
+  '<div class="btns"><button class="btn dark" id="f-s" type="button">Save karein</button><button class="btn ghost" id="f-c2" type="button">Cancel</button></div>';
+ var pp=function(){$('#pp').innerHTML=w.img?'<img src="'+esc(w.img)+'" alt="">':'Photo nahi hai (icon dikhega)';$('#f-x').hidden=!w.img};
+ pp();
+ $('#f-i').onchange=function(e){
+  var fl=e.target.files&&e.target.files[0];if(!fl)return;
+  $('#f-e').textContent='';
+  shrink(fl).then(function(u){w.img=u;pp()}).catch(function(){$('#f-e').textContent='Yeh photo nahi khul payi. Doosri photo chunein.'});
+ };
+ $('#f-x').onclick=function(){w.img='';pp()};
+ $('#f-c2').onclick=function(){$('#pdlg').close()};
+ $('#f-s').onclick=function(){
+  var n=$('#f-n').value.trim();
+  if(!n){$('#f-e').textContent='Design ka naam ya code likhein.';$('#f-n').focus();return}
+  w.n=n;w.code=w.code||n;w.c=$('#f-c').value;w.m=$('#f-m').value;w.p=$('#f-p').value.trim();
+  w.gw=$('#f-gw').value.trim();w.nw=$('#f-nw').value.trim();w.size=$('#f-sz').value.trim();
+  w.stock=Math.max(0,parseInt($('#f-st').value,10)||0);w.d=$('#f-d').value.trim();
+  if(isNew){S.products.unshift(w)}else{Object.assign(p,w)}
+  touch();list();$('#pdlg').close();
+ };
+ $('#pdlg').showModal();
+}
+
+/* ---------- Google Sheet (CSV) import ---------- */
+function parseCSV(t){
+ var rows=[],r=[],f='',q=false,i,c;
+ for(i=0;i<t.length;i++){
+  c=t[i];
+  if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}
+  else if(c==='"')q=true;
+  else if(c===','){r.push(f);f=''}
+  else if(c==='\n'||c==='\r'){if(c==='\r'&&t[i+1]==='\n')i++;r.push(f);rows.push(r);r=[];f=''}
+  else f+=c;
+ }
+ if(f!==''||r.length){r.push(f);rows.push(r)}
+ return rows;
+}
+function importCSV(text){
+ var rows=parseCSV(text);if(rows.length<2)return 'CSV mein data nahi mila.';
+ var key=function(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'')};
+ var idx={};rows[0].forEach(function(h,i){idx[key(h)]=i});
+ var col=function(r,k){return idx[k]==null?'':String(r[idx[k]]||'').trim()};
+ if(idx.sno==null)return 'Pehla column "S. No." hona chahiye.';
+ var added=0,updated=0;
+ rows.slice(1).forEach(function(r){
+  var code=col(r,'sno');if(!code)return;
+  var pur=col(r,'purity').toUpperCase();
+  var f={gw:col(r,'gw'),nw:col(r,'nw'),p:pur,stock:parseInt(col(r,'stock'),10)||0,size:col(r,'size')};
+  var ex=S.products.filter(function(p){return p.code===code})[0];
+  if(ex){Object.assign(ex,f);updated++}
+  else{
+   var cat=col(r,'category');
+   S.products.push(Object.assign({id:'p'+Date.now()+'_'+added,n:code,code:code,c:S.cats.indexOf(cat)>-1?cat:'Other',m:/925|silver/i.test(pur+col(r,'metal'))?'silver':'gold',d:'',img:''},f));
+   added++;
+  }
+ });
+ touch();list();
+ return added+' naye design jude, '+updated+' update hue.';
+}
+
+/* ---------- Publish ---------- */
+function buildDoc(){
+ var css=$('#css').textContent, js=$('#app-js').textContent;
+ var json=JSON.stringify(S).replace(/</g,'\\u003c');
+ return '<!DOCTYPE html>\n<html lang="hi"><head>\n'+HEAD+'\n<title>'+esc(S.shop.name)+' – Catalog</title>\n<meta name="description" content="'+esc(S.shop.tagline)+'">\n<style id="css">'+css+'</style>\n</head><body>\n<div id="app"></div>\n<script id="data" type="application/json">'+json+'<\/script>\n<script id="app-js">'+js+'<\/script>\n</body></html>\n';
+}
+function publish(){
+ var b=$('#pub');
+ if(!art){status('Publish yahan available nahi hai. Page ko claude.ai mein apne account se kholein.');return}
+ b.disabled=true;status('Publish ho raha hai...');
+ art.publish(buildDoc()).then(function(){dirty=false}).catch(function(e){
+  b.disabled=false;
+  var c=e&&e.code;
+  if(c==='conflict')return;
+  status(c==='not_writer'||c==='not_granted'?'Aapke paas publish ka access nahi hai.':c==='too_large'?'Site bahut badi ho gayi hai. Kuch photos hatayein.':c==='rate_limited'?'Thoda ruk kar dobara try karein.':'Publish nahi hua. Dobara try karein.');
+ });
+}
+
+/* ---------- Boot ---------- */
+function render(){view==='admin'?admin():catalog()}
+window.addEventListener('hashchange',function(){var v=location.hash==='#admin'?'admin':'catalog';if(v!==view){view=v;render()}});
+window.addEventListener('beforeunload',function(e){if(dirty){e.preventDefault();e.returnValue=''}});
+render();
+if(window.claude&&window.claude.use){
+ Promise.all([
+  window.claude.use('user').then(function(u){return u?u.canEdit():false}).catch(function(){return false}),
+  window.claude.use('artifact').catch(function(){return null})
+ ]).then(function(r){
+  canAdmin=!!r[0];art=r[1];ready=true;
+  if(view==='admin')render();
+ });
+}else{ready=true;if(view==='admin')render()}
+})();
+</script>
+</body></html>
